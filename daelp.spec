@@ -15,10 +15,10 @@ daemon-helper
 
 %install
 mkdir -p %{buildroot}/usr/bin/
-install -m 755 hello-world.sh %{buildroot}/usr/bin/hello-world.sh
+install -m 755 bin/daelp.sh %{buildroot}/usr/bin/daelp.sh
 
 %files
-/usr/bin/hello-world.sh
+/usr/bin/daelp.sh
 
 %changelog
 # let skip this for now
