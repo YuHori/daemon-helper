@@ -23,4 +23,5 @@ install -m 755 /etc/systemd/system/daemontools.service %{buildroot}/etc/systemd/
 /etc/systemd/system/daemontools.service
 
 %changelog
-# let skip this for now
+* Tue Feb 16 1999 Jun YuHori 1.0.0-1
+- initial
