@@ -14,12 +14,13 @@ EOF
 
 start() {
   SERVICE=$1
-  echo "daelp start..."  
+  echo "daelp start $SERVICE..."  
   sudo ln -s /root/$SERVICE/ /service/
 }
 
 stop() {
-  echo "daelp stop..."
+  SERVICE=$1
+  echo "daelp stop $SERVICE..."
   sudo unlink /service/$SERVICE
 }
 
@@ -28,7 +29,7 @@ ACTION=$1
 shift
 
 # 第二引数がservice
-SERVICE=$2
+SERVICE=$1
 shift
 
 case "$ACTION" in
