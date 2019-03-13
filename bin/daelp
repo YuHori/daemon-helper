@@ -13,28 +13,27 @@ EOF
 }
 
 start() {
+  SERVICE=$1
   echo "daelp start..."  
+  sudo ln -s /root/$SERVICE/ /service/
 }
 
 stop() {
   echo "daelp stop..."
+  sudo unlink /service/$SERVICE
 }
 
-status() {
-  echo "daelp status..."
-}
-
-# 第一引数をaction とする
+# 第一引数をaction
 ACTION=$1
 shift
 
-# 第二引数以降がservices
-while [ "$1" != "" ]
-do
-  SERVICE=$1
-  echo $SERVICE
+# 第二引数がservice
+SERVICE=$2
+shift
 
-  shift
-done
-
-usage
+case "$ACTION" in
+  "start" ) 
+    start $SERVICE ;;
+  "stop" ) 
+    stop $SERVICE ;;
+esac
