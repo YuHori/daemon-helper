@@ -15,10 +15,12 @@ daemon-helper
 
 %install
 mkdir -p %{buildroot}/usr/bin/
-install -m 755 /usr/bin/daelp.sh %{buildroot}/usr/bin/daelp.sh
+install -m 755 /usr/bin/daelp %{buildroot}/usr/bin/daelp
+install -m 755 /etc/systemd/system/daemontools.service %{buildroot}/etc/systemd/system/daemontools.service
 
 %files
-/usr/bin/daelp.sh
+/usr/bin/daelp
+/etc/systemd/system/daemontools.service
 
 %changelog
 # let skip this for now

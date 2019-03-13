@@ -3,7 +3,8 @@ setup:
 	rpmdev-setuptree
 
 install:
-	install -m 755 bin/daelp.sh /usr/bin/daelp.sh
+	install -m 755 bin/daelp /usr/bin/daelp
+	install -m 755 conf/daemontools.service /etc/systemd/system/daemontools.service
 
 package:
 	mv rpm/*.spec ~/rpmbuild/SPECS/

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+usage() {
+    cat <<EOF
+$(basename ${0}) is a daemontools helper tool
+
+Usage:
+    $(basename ${0}) [command] [<options>]
+
+Options:
+    --help, -h        print this
+EOF
+}
+
+start() {
+  echo "daelp start..."  
+}
+
+stop() {
+  echo "daelp stop..."
+}
+
+status() {
+  echo "daelp status..."
+}
+
+# 第一引数をaction とする
+ACTION=$1
+shift
+
+# 第二引数以降がservices
+while [ "$1" != "" ]
+do
+  SERVICE=$1
+  echo $SERVICE
+
+  shift
+done
+
+usage
